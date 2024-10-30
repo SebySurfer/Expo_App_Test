@@ -1,16 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { MainStackNavigator } from './navigation/StackNavigator';
 
 import MyHeader from './components/MyHeader';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <MyHeader/>
-      <Text>Open up App.js to start working on your app!</Text>
-      
-      <StatusBar style="auto" />
-    </View>
+  <NavigationContainer>
+    <MainStackNavigator/>
+  </NavigationContainer>
+
   );
 }
 
