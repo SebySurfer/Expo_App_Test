@@ -17,6 +17,15 @@ const Stack = createStackNavigator();
 
 
 
+function StackNavigator() {
+  return(
+    <Stack.Navigator>
+      <Stack.Screen name='Home' component={Home}/>
+      <Stack.Screen name='About' component={About}/>
+    </Stack.Navigator>
+  )
+}
+
 function TabNavigator() {
   return(
     <Tab.Navigator>
@@ -26,15 +35,28 @@ function TabNavigator() {
   )
 }
 
+
+//Drawer  being the main navigator, holding all other "screens" and 
 function DrawerNavigator(){
   return(
     <Drawer.Navigator>
-      <Drawer.Screen name='Tabs' component={TabNavigator}/>
+      <Drawer.Screen name='Stack' component={StackNavigator}/>
+      <Drawer.Screen name='Tab' component={TabNavigator}/>
       <Drawer.Screen name='Profile' component={Profile}/>
 
     </Drawer.Navigator>
   )
 }
+
+/*
+The STACK Screen is on the options of the TAB Screen. Meaning, We get a drawer with a list of screens that we want. 
+Navigation in itself behaves like a screen. It IS A SCREEN
+
+Navigation is the holder of all the other screens. The screens in themselves act in their own field. 
+
+In other words, a navigation is a holder of other screens. Those screens can be navigations that behave in their own rules
+
+*/
 
 
 export default function App() {
