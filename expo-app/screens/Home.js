@@ -12,6 +12,12 @@ const Home = ({navigation}) => {
       onPress={() => navigation.navigate("About")} // We added an onPress event which would navigate to the About screen
 
       />
+
+      <Button 
+      title="Go to Profile Screen" 
+      onPress={() => navigation.navigate("Profile")} // We added an onPress event which would navigate to the About screen
+
+      />
     </View>
   );
 };
