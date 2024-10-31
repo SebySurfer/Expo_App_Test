@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 
 import DrawerNavigator from './navigations/DrawerNavigator.js';
+import StackNavigator from './navigations/StackNavigator.js';
 
 /*
 The STACK Screen is on the options of the TAB Screen. Meaning, We get a drawer with a list of screens that we want. 
@@ -15,10 +16,12 @@ In other words, a navigation is a holder of other screens. Those screens can be 
 
 */
 
+
+
 export default function App() {
   return (
   <NavigationContainer>
-    <DrawerNavigator/>
+    <StackNavigator/>
   </NavigationContainer>
 
   );

@@ -33,6 +33,9 @@ function StackNavigator() {
     )
   }
 
+
+  // Drawer being main: 
+
 export default function DrawerNavigator() {
   return (
     <Drawer.Navigator>
