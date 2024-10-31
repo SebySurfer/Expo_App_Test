@@ -1,11 +1,17 @@
 
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Button } from "react-native";
 
-const About = () => {
+const About = ({navigation}) => {
   return (
     <View style={styles.center}>
       <Text>This is the about screen</Text>
+      <Button
+        title="Go back"
+        onPress={() => navigation.goBack()}
+        
+      />
+
     </View>
   );
 };
