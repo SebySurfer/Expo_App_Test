@@ -1,52 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+
 import { NavigationContainer } from "@react-navigation/native";
 
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
-
-import Home from './screens/Home';
-import About from './screens/About';
-import Profile from './screens/Profile';
-
-
-const Drawer = createDrawerNavigator();
-const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
-
-
-
-function StackNavigator() {
-  return(
-    <Stack.Navigator>
-      <Stack.Screen name='Home' component={Home}/>
-      <Stack.Screen name='About' component={About}/>
-    </Stack.Navigator>
-  )
-}
-
-function TabNavigator() {
-  return(
-    <Tab.Navigator>
-      <Tab.Screen name='Home' component={Home}/>
-      <Tab.Screen name='About' component={About}/>
-    </Tab.Navigator>
-  )
-}
-
-
-//Drawer  being the main navigator, holding all other "screens" and 
-function DrawerNavigator(){
-  return(
-    <Drawer.Navigator>
-      <Drawer.Screen name='Stack' component={StackNavigator}/>
-      <Drawer.Screen name='Tab' component={TabNavigator}/>
-      <Drawer.Screen name='Profile' component={Profile}/>
-
-    </Drawer.Navigator>
-  )
-}
+import DrawerNavigator from './navigations/DrawerNavigator.js';
 
 /*
 The STACK Screen is on the options of the TAB Screen. Meaning, We get a drawer with a list of screens that we want. 
@@ -58,7 +15,6 @@ In other words, a navigation is a holder of other screens. Those screens can be 
 
 */
 
-
 export default function App() {
   return (
   <NavigationContainer>
@@ -67,8 +23,6 @@ export default function App() {
 
   );
 }
-
-
 
 
 const styles = StyleSheet.create({
